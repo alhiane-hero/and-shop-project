@@ -1,0 +1,253 @@
+.success-failed-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    &.show {
+        display: block;
+    }
+    #successFailedModalContainer {
+        height: 100vh;
+        @extend %centerBox;
+        .success-Failed-modal-content {
+            @extend %hideEffect;
+            &.show {
+                @extend %showEffect;
+            }
+            width: 500px;
+            background-color: $whiteColor;
+            padding: 20px 0 30px;
+            border-radius: $radius;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            &.green {
+                h3 {
+                    color: #080;
+                }
+            }
+            &.red {
+                h3 {
+                    color: #f00;
+                }
+            }
+            img {
+                display: block;
+                width: 80px;
+                @extend %leftRighCenter;
+            }
+            h3 {
+                font-size: 30px;
+                font-weight: 600;
+                color: #444;
+                margin: 10px 0 15px;
+            }
+            p {
+                font-size: 18px;
+                color: $paragraphCcolor;
+            }
+        }
+    }
+}
+
+.product-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    &.show {
+        display: block;
+    }
+    #productDetailssModalContainer {
+        height: 100vh;
+        @extend %centerBox;
+        .product {
+            position: relative;
+            background-color: $whiteColor;
+            padding: 30px;
+            border-radius: $radius;
+            @extend %hideEffect;
+            &.show {
+                @extend %showEffect;
+            }
+            .close_modal {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 32px;
+                height: 32px;
+                border-radius: $rounded;
+                border: none;
+                background-color: transparent;
+                font-size: 18px;
+                color: $blackColor;
+                cursor: pointer;
+                @include transitionGenerator(all);
+                &:hover {
+                    background-color: #f79837;
+                    color: $whiteColor;
+                    transform: rotate(180deg);
+                }
+            }
+            .text {
+                h3 {
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: $blackColor;
+                }
+                .reviews_rating {
+                    margin-top: 15px;
+                    align-items: center;
+                    .stars {
+                        li {
+                            margin-right: 5px;
+                            a {
+                                font-size: 22px;
+                                color: #eee;
+                            }
+                        }
+                    }
+                    .reviews {
+                        display: block;
+                        margin-left: 15px;
+                        color: $blackColor;
+                    }
+                }
+                h4 {
+                    margin-top: 15px;
+                    font-size: 24px;
+                    del {
+                        color: $paragraphCcolor;
+                    }
+                }
+                .desc {
+                    margin-top: 15px;
+                }
+                .product-color {
+                    margin-top: 15px;
+                    span {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: $blackColor;
+                        display: block;
+                        margin-bottom: 7px;
+                    }
+                    .colors {
+                        display: flex;
+                        li {
+                            margin-right: 10px;
+                            label {
+                                input {
+                                    display: none;
+                                    &:checked + span::after {
+                                        font-family: FontAwesome;
+                                        content: "\f00c";
+                                        font-weight: 900;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        color: $whiteColor;
+                                    }
+                                }
+                                span {
+                                    position: relative;
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 2px;
+                                    background-color: #eee;
+                                    cursor: pointer;
+                                    &.product-color-red {
+                                        background-color: #f00;
+                                    }
+                                    &.product-color-green {
+                                        background-color: #080;
+                                    }
+                                    &.product-color-blue {
+                                        background-color: #00f;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .product-form {
+                    margin-top: 15px;
+                    .plus-minus-inpu {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 15px;
+                        button {
+                            width: 24px;
+                            height: 24px;
+                            background-color: #000;
+                            border-radius: $rounded;
+                            border: none;
+                            color: $whiteColor;
+                            margin: 0 15px;
+                            cursor: pointer;
+                            &:first-of-type {
+                                margin-left: 0;
+                            }
+                            @extend %centerBox;
+                        }
+                        input {
+                            width: 100px;
+                            padding: 7px;
+                            text-align: center;
+                            font-size: 18px;
+                            color: $blackColor;
+                        }
+                    }
+                    input[type="submit"] {
+                        cursor: pointer;
+                        padding: 10px 16px;
+                    }
+                }
+                .modal_share_icons {
+                    margin-top: 20px;
+                    h4 {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: $blackColor;
+                        margin-bottom: 10px;
+                    }
+                    .social-media {
+                        li {
+                            margin-right: 10px;
+                            a {
+                                width: 32px;
+                                height: 32px;
+                                border-radius: $rounded;
+                                color: $whiteColor;
+                                &.facebook {
+                                    background-color: rgb(59, 89, 152);
+                                }
+                                &.twitter {
+                                    background-color: rgb(0, 172, 237);
+                                }
+                                &.linkedin {
+                                    background-color: rgb(0, 127, 177);
+                                }
+                                &.telegram {
+                                    background-color: rgb(55, 174, 226);
+                                }
+                                &.whatsapp {
+                                    background-color: rgb(37, 211, 102);
+                                }
+                                @extend %centerBox;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

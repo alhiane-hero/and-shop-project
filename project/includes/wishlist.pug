@@ -1,0 +1,11 @@
+include ../includes/mixins
+section(class='products-aside wishlist', id='wishlist')
+    .container 
+        button(class='closeBtn',
+            data-el='wishlist')
+            img(src="../imgs/icons/times.svg", alt="close aside logo")
+        h2.aside-heading Wishlist
+        ul.products
+            - for(var i = 1; i <= 2; i++)
+                +profuctsList('product-' + i)
+        a.normalBtn(href='#') View Wishlist

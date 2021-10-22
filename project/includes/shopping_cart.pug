@@ -1,0 +1,14 @@
+include ../includes/mixins
+section(class='products-aside shopping-cart', id='shoppingCart')
+    .container 
+        button(class='closeBtn',
+            data-el='shoppingCart')
+            img(src="../imgs/icons/times.svg", alt="close aside logo")
+        h2.aside-heading Shopping Cart
+        ul.products#cartProductsContainer
+        div(class='subtotal d-flex justify-content-between')
+            h4 Subtotal:
+            span#subTotal $00.00
+        div(class='btns d-flex justify-content-between')
+            a.normalBtn(href='../product_details/cart.html') View Cart
+            a.normalBtn(href='#') Checkout

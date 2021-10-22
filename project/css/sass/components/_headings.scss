@@ -1,0 +1,25 @@
+.aside-heading {
+    color: $blackColor;
+    font: {
+        size: 22px;
+        weight: 600;
+    }
+    margin-bottom: 30px;
+}
+
+.heading-box {
+    text-align: center;
+    margin-bottom: 30px;
+    h2 {
+        font: {
+            size: 36px;
+            weight: 600;
+        }
+        color: $blackColor;
+    }
+    p {
+        color: $paragraphCcolor;
+        line-height: 24px;
+        padding-top: 10px;
+    }
+}

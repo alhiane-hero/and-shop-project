@@ -1,0 +1,135 @@
+aside#aside
+    button(class='closeBtn closeBtn',
+            data-el='aside')
+        img(src="../imgs/icons/times.svg", alt="close aside logo")
+    nav 
+        ul.mobile-menu 
+                    li 
+                        a(href="#",
+                        class='mobile-menu-link',
+                        data-link='home-link')
+                            | Home
+                            i(class='fas fa-angle-down')
+                        ul(class='sub-menu home-link', id='home-link')
+                            li 
+                                a(href="fashion_page.html") Fashion
+                            li
+                                a(href="furniture_page.html") Furniture
+                            li
+                                a(href="electronics_page.html") Electronics
+                    li.has-dropdown
+                        a(href="#",
+                        class='mobile-menu-link',
+                        data-link='shop-link')
+                            | Shop
+                            i(class='fas fa-angle-down')
+                        ul(class='sub-menu shop-link', id='shop-link')
+                            li.sub-menu-item
+                                p.sub-menu-item-title Shop Layouts
+                                ul.mega-menu 
+                                    li: a(href="#") Shop Four Grid
+                                    li: a(href="#") Shop Three Grid
+                                    li: a(href="#") Shop List View
+                                    li: a(href="#") Shop Left Sidebar
+                                    li: a(href="#") Shop Right Sidebar
+                                    li: a(href="#") Product Single
+                                    li: a(href="#") Product Single Two
+                            li.sub-menu-item
+                                p.sub-menu-item-title Other Pages
+                                ul.mega-menu 
+                                    li: a(href="#") Cart View One
+                                    li: a(href="#") Cart View Two
+                                    li: a(href="#") Empty Cart
+                                    li: a(href="#") Checkout View One
+                                    li: a(href="#") Checkout View Two
+                                    li: a(href="#") Wishlist
+                                    li: a(href="#") Compare
+                                    li: a(href="#") Order Tracking
+                                    li: a(href="#") Order Complete
+                    li  
+                        a(href="#", 
+                        class='mobile-menu-link',
+                        data-link='feature-link') 
+                            | Feature
+                            i(class='fas fa-angle-down')
+                        ul(class='sub-menu feature-link', id='feature-link')
+                            li 
+                                a(href="#") Product Hover
+                            li
+                                a(href="#") Order Success
+                            li
+                                a(href="#") Email Template 1
+                            li 
+                                a(href="#") Email Template 2
+                            li
+                                a(href="#") Email Template 3
+                            li
+                                a(href="#") LookBook
+                            li
+                                a(href="#") Invoice 1
+                            li
+                                a(href="#") Invoice 2
+                    li 
+                        a(href="#",
+                        class='mobile-menu-link',
+                        data-link='blog-link') 
+                            | Blog
+                            i(class='fas fa-angle-down')
+                        ul(class='sub-menu blog-link', id='blog-link')
+                            li 
+                                a(href="#") Blog Grid View One
+                            li
+                                a(href="#") Blog Grid View Two
+                            li
+                                a(href="#") Blog List View
+                            li 
+                                a(href="#") Blog Single View One
+                            li
+                                a(href="#") Blog Single View TWo
+                    li 
+                        a(href="#",
+                        class='mobile-menu-link',
+                        data-link='pages-link') 
+                            | Pages
+                            i(class='fas fa-angle-down')
+                        ul(class='sub-menu pages-link', id='pages-link')
+                            li 
+                                a(href="#") About Us
+                            li
+                                a(href="#") Vendor
+                            li
+                                a(href="#") My Account
+                            li 
+                                a(href="#") Contact Us One
+                            li 
+                                a(href="#") Contact Us Two
+                            li
+                                a(href="#") Privacy Policy
+                            li
+                                a(href="#") Coming Soon
+                            li
+                                a(href="#") Frequently Questions
+                            li
+                                a(href="#") 404 Error
+                            li
+                                a(href="#") Login
+    .mobile-contact 
+        a.logo(href="#") 
+            img(src="../imgs/logo/white-logo.png",
+                alt="logo",
+                class='img-fluid')
+        p.info 
+            | Address: Your address goes here.
+            br
+            | Call Us: 0123456789, 0123456789
+            br
+            | Email: demo@example.com
+        ul(class='social-media d-flex justify-content-center')
+            li: a(href="#"): i(class='fab fa-facebook-f')
+            li: a(href="#"): i(class='fab fa-twitter')
+            li: a(href="#"): i(class='fab fa-instagram')
+            li: a(href="#"): i(class='fab fab fa-linkedin-in')
+        ul(class='user-links d-flex justify-content-center')
+            li: a(href="#") Wishlist
+            li: a(href="#") Cart
+            li: a(href="#") Checkout

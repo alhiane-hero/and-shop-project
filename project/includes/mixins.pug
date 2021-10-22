@@ -1,0 +1,40 @@
+mixin profuctsList(imgSrc)
+    li.product
+        .info-box
+            img(src="../imgs/products/" + imgSrc + ".png",
+                alt="product image", class='img-fluid')
+            .text 
+                a(href="#")  Car Wheel
+                span 1 x $49.00
+        a.delete-btn(href="#")
+            i(class='fa fa-trash-alt')
+
+mixin productsVariation(imgSrc, feat, title, collection)
+    .product 
+        img( src="../imgs/product_variation/" + imgSrc + ".png",
+        alt="product variation image", class='img-fluid')
+        .info 
+            h4.colored #{feat}
+            h2 #{title}
+            h4 #{collection}
+            a.normalBtn(href="#") Shop Now
+
+mixin successFailedModal
+    .success-failed-modal#successFailedModal
+        .container
+            #successFailedModalContainer
+    
+mixin productDetailssModal
+    .product-details-modal#productDetailssModal
+        .container
+            #productDetailssModalContainer
+
+mixin heroSection
+    section.hero
+        .container
+            .content
+                h2 Cart
+                ul.d-flex.justify-content-center
+                    li: a(href="../home/fashion_page.html") Home
+                    li.slash /
+                    li: a(href="#").active Cart

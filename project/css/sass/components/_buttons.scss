@@ -1,0 +1,31 @@
+.closeBtn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    @extend %centerBox;
+    img {
+        width: 18px;
+    }
+}
+
+.normalBtn {
+    display: block;
+    width: fit-content;
+    padding: 16px 35px;
+    background-color: #000;
+    border: none;
+    color: $whiteColor;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @include transitionGenerator(background-color);
+    &:hover {
+        background-color: #262626;
+    }
+}

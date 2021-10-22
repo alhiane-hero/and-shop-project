@@ -1,0 +1,240 @@
+.product_variation_one {
+    .hide-product {
+        display: none;
+        @include mediumQuery {
+            display: block;
+        }
+    }
+    .product {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+        &:hover {
+            img {
+                transform: scale(1.1) rotate(1deg);
+            }
+        }
+        img {
+            @include transitionGenerator(transform);
+        }
+        .info {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            @extend %centerBox;
+            flex-direction: column;
+            h4 {
+                font: {
+                    size: 22px;
+                    weight: 600;
+                }
+                &.colored {
+                    color: $mainColor;
+                }
+                &:last-of-type {
+                    margin-bottom: 9px;
+                }
+            }
+            h2 {
+                font: {
+                    size: 30px;
+                    weight: 700;
+                }
+                margin: 5px 0;
+            }
+        }
+    }
+}
+
+/* start hot_products */
+.hot_products {
+    .tab-btns {
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        li {
+            margin: 10px 20px;
+            a {
+                display: block;
+                padding: 0 3px 7px;
+                color: $blackColor;
+                font: {
+                    size: 15px;
+                    weight: 500;
+                }
+                text-transform: uppercase;
+                @include transitionGenerator(color);
+                &.active {
+                    border-bottom: 2px solid $mainColor;
+                    color: $mainColor;
+                }
+                &:hover {
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+    .col-tab {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.1s ease-in-out;
+        &.active {
+            opacity: 0;
+            visibility: hidden;
+        }
+        &:nth-of-type(7),
+        &:nth-of-type(6),
+        &:nth-of-type(5),
+        &:last-of-type {
+            transition-delay: 0.1s;
+        }
+        .tab-box {
+            position: relative;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 15px 0 rgb(0 0 0 / 6%);
+            .thumb {
+                position: relative;
+                overflow: hidden;
+                .imgs {
+                    position: relative;
+                    overflow: hidden;
+                    display: block;
+                    img {
+                        &.one {
+                            position: relative;
+                            z-index: 2;
+                        }
+                        &.two {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 1;
+                            max-width: 100%;
+                            height: auto;
+                        }
+                        transform: scale(1) rotate(0deg);
+                        @include transitionGenerator(all);
+                    }
+                }
+                .badges {
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    z-index: 3;
+                    padding: 0 7px;
+                    line-height: 1.7rem;
+                    font-size: 14px;
+                    color: $whiteColor;
+                    border-radius: 3.5px;
+                    &.green {
+                        background-color: #007a58;
+                    }
+                    &.blue {
+                        background-color: #2664fb;
+                    }
+                    &.orange {
+                        background-color: $mainColor;
+                    }
+                    &.red {
+                        background-color: red;
+                    }
+                }
+                .actions {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 3;
+                    .action-btn {
+                        width: 40px;
+                        height: 40px;
+                        background-color: $whiteColor;
+                        border-radius: 50%;
+                        margin-bottom: 10px;
+                        color: $blackColor;
+                        @include transitionGenerator(all);
+                        @extend %centerBox;
+                        &:last-of-type {
+                            position: relative;
+                        }
+                        &:hover {
+                            background-color: $mainColor;
+                            color: $whiteColor;
+                        }
+                        &.hide {
+                            visibility: hidden;
+                            opacity: 0;
+                            transform: translateY(20px);
+                            @include transitionGenerator(all);
+                        }
+                    }
+                }
+                .add-to-cart-btn {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    z-index: 3;
+                    padding: 13px 35px;
+                    transform: translateX(-50%);
+                    background-color: $whiteColor;
+                    border-radius: 3.5px;
+                    color: $blackColor;
+                    text-transform: capitalize;
+                    cursor: pointer;
+                    font-weight: 600;
+                    visibility: hidden;
+                    opacity: 0;
+                    transform: translate(-50%, 20px);
+                    @include transitionGenerator(all);
+                    &:hover {
+                        color: $mainColor;
+                    }
+                }
+            }
+            .content {
+                padding: 20px;
+                text-align: center;
+                .title {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    color: $blackColor;
+                    a {
+                        display: block;
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: $blackColor;
+                        @include transitionGenerator(color);
+                        &:hover {
+                            color: $mainColor;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .thumb {
+                    .imgs {
+                        img {
+                            &.one {
+                                visibility: hidden;
+                                opacity: 0;
+                            }
+                            transform: scale(1.1) rotate(3deg);
+                        }
+                    }
+                    .actions {
+                        .hide {
+                            visibility: visible;
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                    .add-to-cart-btn {
+                        visibility: visible;
+                        opacity: 1;
+                        transform: translate(-50%, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+/* end hot_products */

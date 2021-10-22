@@ -1,0 +1,31 @@
+.hero {
+    padding: $generalPadding 0;
+    @include bgImage("../../imgs/bg/hero_bg.png");
+    .content {
+        text-align: center;
+        h2 {
+            font-size: 36px;
+            font-weight: 500;
+            color: $whiteColor;
+            margin-bottom: 10px;
+        }
+        ul {
+            align-items: center;
+            li {
+                &.slash {
+                    margin: 0 7px;
+                    font-size: 24px;
+                    color: $whiteColor;
+                }
+                a {
+                    font-size: 17px;
+                    color: $whiteColor;
+                    letter-spacing: 1px;
+                    &.active {
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+}

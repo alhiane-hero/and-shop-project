@@ -1,0 +1,161 @@
+.cart {
+    #rowCart {
+        &.hide {
+            display: none;
+        }
+    }
+    .empty_cart {
+        text-align: center;
+        h2 {
+            font-size: 36px;
+            font-weight: 500;
+        }
+        p {
+            margin: 10px 0 15px;
+        }
+        a {
+            padding: 13px 19px;
+            border-radius: 0.25rem;
+            @extend %leftRighCenter;
+        }
+        &.hide {
+            display: none;
+        }
+    }
+    .table_desc {
+        border: 1px solid #ededed;
+        .table_page {
+            table {
+                width: 100%;
+                padding: 2px;
+                border-collapse: collapse;
+                thead {
+                    background-color: $mainColor;
+                    tr {
+                        th {
+                            padding: 15px;
+                            border-right: 1px solid #ededed;
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: $whiteColor;
+                            &:last-child {
+                                border-right: none;
+                            }
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td {
+                            padding: 10px;
+                            border-right: 1px solid #ededed;
+                            font-weight: 500;
+                            text-align: center;
+                            color: $blackColor;
+                            min-width: 150px;
+                            border-bottom: 1px solid #ededed;
+                            &.product_remove {
+                                min-width: 100px;
+                                .remove_product_btn {
+                                    font-size: 18px;
+                                    background-color: transparent;
+                                    border: none;
+                                    color: red;
+                                    cursor: pointer;
+                                }
+                            }
+                            &.product_img {
+                                img {
+                                    width: 92px;
+                                    height: 92px;
+                                    object-fit: cover;
+                                }
+                            }
+                            &.product_title {
+                                a {
+                                    color: $blackColor;
+                                    @include transitionGenerator(color);
+                                    &:hover {
+                                        color: $mainColor;
+                                    }
+                                }
+                            }
+                            &.product_quantity {
+                                input {
+                                    width: 60px;
+                                    height: 40px;
+                                    padding: 0 5px 0 10px;
+                                    background-color: transparent;
+                                    border: 1px solid #ededed;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .cart_submit {
+            padding: 10px;
+            .clear_cart_btn {
+                padding: 10px 16px;
+                cursor: pointer;
+                @extend %centerOnX;
+            }
+        }
+    }
+    .coupon_code {
+        border: 1px solid #ededed;
+        .coupon_title {
+            font-size: 16px;
+            font-weight: 600;
+            color: $whiteColor;
+            text-transform: uppercase;
+            padding: 10px;
+            background-color: $mainColor;
+        }
+        .coupon_inner {
+            padding: 15px;
+            .desc {
+                margin-bottom: 17px;
+            }
+            .coupon_form {
+                display: flex;
+                input {
+                    width: 170px;
+                    padding: 10px 16px;
+                    border: 1px solid #ededed;
+                    margin-right: 10px;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                button {
+                    padding: 10px 16px;
+                    cursor: pointer;
+                }
+            }
+            .cart_subtotal {
+                margin-bottom: 17px;
+            }
+            .with_border {
+                display: block;
+                text-align: right;
+                margin-bottom: 17px;
+                padding-bottom: 7px;
+                border-bottom: 1px solid #ededed;
+                color: $blackColor;
+                @include transitionGenerator(color);
+                &:hover {
+                    color: $mainColor;
+                }
+            }
+            .checkout_btn {
+                a {
+                    padding: 10px 16px;
+                    @extend %centerOnX;
+                }
+            }
+        }
+    }
+}

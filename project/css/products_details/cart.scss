@@ -1,0 +1,14 @@
+@import "../sass/helpers/variables";
+@import "../sass/helpers/function";
+@import "../sass/helpers/mixins";
+
+@import "../sass/layout/grid-system";
+@import "../sass/pages/globals";
+@import "../sass/components/buttons";
+@import "../sass/components/headings";
+@import "../sass/components/modals";
+
+@import "../sass/layout/header";
+@import "../sass/layout/hero";
+@import "../sass/pages/products_details/cart";
+@import "../sass/layout/footer";

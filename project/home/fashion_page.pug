@@ -1,0 +1,83 @@
+include ../includes/variables
+include ../includes/mixins
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title AndShop Ecommerce React JS Template Preview - ThemeForest
+        include ../includes/styles
+    body
+        // start header
+        include ../includes/header
+        // end header
+        // start sidebar
+        include ../includes/aside
+        // end sidebar
+        // start search_box
+        include ../includes/search_box
+        // end search_box
+        // start wishlist
+        include ../includes/wishlist
+        // end wishlist
+        // start shopping_cart
+        include ../includes/shopping_cart
+        // end shopping_cart
+        // start product_variation_one
+        section.section.product_variation_one
+            .container 
+                .row 
+                    .col-lg-4.col-md-6
+                        +productsVariation('product_variation_1',
+                            'OUTERWEAR',
+                            'NEW',
+                            'COLLECTION')
+                        +productsVariation('product_variation_2',
+                            'SUMMER',
+                            'HOT',
+                            'COLLECTION')
+                    .col-lg-4.col-md-6
+                        +productsVariation('product_variation_3',
+                            '10% OFFER',
+                            'NEW',
+                            'NO SELECTED MODELS')
+                    .col-lg-4.col-md-6.hide-product
+                        +productsVariation('product_variation_4',
+                            'ARRIVALS',
+                            'NEW',
+                            'COLLECTION')
+                        +productsVariation('product_variation_5',
+                            'OFFER',
+                            'HOT',
+                            'COLLECTION')
+        // end product_variation_one
+        // start hot_products
+        section.section.hot_products
+            .container 
+                .heading-box 
+                    h2 HOT PRODUCTS
+                    p See What Everyone Is Shopping from Andshop E-Commerce
+                ul.tab-btns.d-flex.justify-content-center#tabBtns
+                    each tabBtn in tabBtnsList
+                        if tabBtn === 'New Arrival'
+                            li: a(href="#",
+                            class='active', data-val='all')  #{tabBtn}
+                        else if tabBtn === 'Trending'
+                            li: a(href="#",  data-val='trending')  #{tabBtn}
+                        else if tabBtn === 'Best Sellers'
+                            li: a(href="#", data-val='bestSelling')  #{tabBtn}
+                        else if tabBtn === 'Featured'
+                            li: a(href="#", data-val='featured')  #{tabBtn}
+                        else
+                            li: a(href="#", data-val='onSell')  #{tabBtn}
+                div.tab-content
+                    .row#productsContainer
+        // end hot_products
+        // start success-failed-modal
+        +successFailedModal
+        // end success-failed-modal
+        // start product-details-modal
+        +productDetailssModal
+        // end product-details-modal
+        include ../includes/scripts

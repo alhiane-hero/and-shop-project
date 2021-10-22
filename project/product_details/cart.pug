@@ -1,0 +1,84 @@
+include ../includes/variables
+include ../includes/mixins
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title AndShop Ecommerce React JS Template Preview - ThemeForest
+        include ../includes/styles
+    body
+        // start header
+        include ../includes/header
+        // end header
+        // start sidebar
+        include ../includes/aside
+        // end sidebar
+        // start search_box
+        include ../includes/search_box
+        // end search_box
+        // start wishlist
+        include ../includes/wishlist
+        // end wishlist
+        // start shopping_cart
+        include ../includes/shopping_cart
+        // end shopping_cart
+        // start hero section
+        +heroSection
+        // end hero section
+        // start cart structure
+        section.cart.section
+            .container
+                #emptyCart.empty_cart.hide
+                    img(src="../imgs/icons/empty.png",
+                    alt="empty cart", class='fluid-img')
+                    h2 YOUR CART IS EMPTY
+                    p Sorry Mate... No Item Found Inside Your Cart!
+                    a(href="../home/fashion_page.html",
+                    class='normalBtn') Continue Shopping
+                #rowCart.row
+                    .col-lg-12.col-md-12.col-sm-12.col-12
+                        .table_desc.mb-5
+                            div.table_page
+                                table 
+                                    thead 
+                                        tr 
+                                            th.product_remove Remove
+                                            th.product_img Image
+                                            th.product_title Product
+                                            th.product_price Price
+                                            th.product_quantity Quantity
+                                            th.product_total Total
+                                    tbody#bodyContainer
+                            .cart_submit 
+                                button.normalBtn.clear_cart_btn Clear Cart
+                    .col-lg-6.col-md-6.col-sm-12.col-12
+                        .coupon_code.left.mb-4.mb-md-0
+                            h3.coupon_title COUPON
+                            div.coupon_inner
+                                p.desc Enter your coupon code if you have one.
+                                form(action="#").coupon_form
+                                    input(type="text", placeholder='Coupon code', required)
+                                    button(type='submit', class='normalBtn') Apply Coupon
+                    .col-lg-6.col-md-6.col-sm-12.col-12
+                        .coupon_code.right.mb-4.mb-lg-0
+                            h3.coupon_title CART TOTAL
+                            div.coupon_inner
+                                div.cart_subtotal.d-flex.justify-content-between.align-items-center
+                                    p Subtotal
+                                    p.cart_amount#subtotalAmount $00.00
+                                div.cart_subtotal.d-flex.justify-content-between.align-items-center
+                                    p Shipping
+                                    p.cart_amount
+                                        span Flat Rate: 
+                                        | $00
+                                a(href="#", class='with_border') Calculate shipping
+                                div.cart_subtotal.d-flex.justify-content-between.align-items-center
+                                    p Total
+                                    p.cart_amount#totalAmount $122.00
+                                div.checkout_btn
+                                    a(href="#", class='normalBtn') Proceed to Checkout 
+        // end cart structure
+        include ../includes/scripts
+        script(src = '../js/index_cart.js', type='module')
